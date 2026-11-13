@@ -1,0 +1,303 @@
+
+/* =================================
+   GENERAL SETTINGS
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6f8;
+    color: #263445;
+    min-height: 100vh;
+}
+
+/* =================================
+   MAIN CONTAINER
+================================= */
+
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+}
+
+/* =================================
+   REGISTRATION CARD
+================================= */
+
+.register-card {
+    width: 100%;
+    max-width: 460px;
+    background: #ffffff;
+    padding: 35px 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(23, 59, 96, 0.09);
+}
+
+/* =================================
+   SCHOOL LOGO
+================================= */
+
+.register-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.register-logo img {
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #DCE5EF;
+}
+
+/* =================================
+   PORTAL BRANDING
+================================= */
+
+.register-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.register-heading h1 {
+    font-size: 27px;
+    color: #173B60;
+    letter-spacing: 1px;
+}
+
+.register-heading p {
+    font-size: 12px;
+    color: #294D70;
+    margin-top: 5px;
+}
+
+/* =================================
+   WELCOME MESSAGE
+================================= */
+
+.register-welcome {
+    margin-bottom: 25px;
+}
+
+.register-welcome h2 {
+    font-size: 21px;
+    color: #173B60;
+    margin-bottom: 7px;
+}
+
+.register-welcome p {
+    font-size: 13px;
+    color: #596777;
+    line-height: 1.5;
+}
+
+/* =================================
+   FORM GROUPS
+================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #294D70;
+    margin-bottom: 8px;
+}
+
+/* =================================
+   INPUT BOX
+================================= */
+
+.input-box {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 0 13px;
+    border: 1px solid #cbd5df;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+.input-box:focus-within {
+    border-color: #294D70;
+}
+
+.input-box > i:first-child {
+    color: #294D70;
+    font-size: 15px;
+}
+
+.input-box input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #263445;
+    font-size: 13px;
+}
+
+.input-box input::placeholder {
+    color: #7b8794;
+}
+
+.toggle-password {
+    color: #294D70;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* =================================
+   VALIDATION MESSAGE
+================================= */
+
+.register-message {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.register-message.error {
+    color: #B54736;
+}
+
+.register-message.info {
+    color: #294D70;
+}
+
+/* =================================
+   CREATE ACCOUNT BUTTON
+================================= */
+
+.register-btn {
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    border-radius: 6px;
+    background: #294D70;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.register-btn:hover {
+    background: #173B60;
+}
+
+/* =================================
+   EXISTING ACCOUNT
+================================= */
+
+.existing-account {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.existing-account p {
+    color: #596777;
+    margin-bottom: 7px;
+}
+
+.existing-account a {
+    color: #294D70;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.register-footer {
+    border-top: 1px solid #e0e5eb;
+    margin-top: 27px;
+    padding-top: 18px;
+    text-align: center;
+}
+
+.register-footer p {
+    font-size: 11px;
+    color: #596777;
+    margin-bottom: 12px;
+}
+
+.register-footer a {
+    color: #294D70;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* =================================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 480px) {
+
+    .register-container {
+        padding: 18px 14px;
+    }
+
+    .register-card {
+        padding: 28px 20px;
+        border-radius: 10px;
+    }
+
+    .register-logo img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .register-heading h1 {
+        font-size: 25px;
+    }
+
+    .register-welcome h2 {
+        font-size: 19px;
+    }
+}
+
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media (max-width: 360px) {
+
+    .register-card {
+        padding: 24px 16px;
+    }
+
+    .register-heading p {
+        font-size: 11px;
+    }
+
+    .register-welcome p {
+        font-size: 12px;
+    }
+
+    .input-box {
+        gap: 8px;
+        padding: 0 10px;
+    }
+}

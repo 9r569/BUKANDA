@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>BUSIP | Student Dashboard</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- MAIN DASHBOARD HEADER -->
+    <header class="dashboard-header">
+
+        <!-- School branding -->
+        <div class="dashboard-brand">
+<!-- Slide menu button -->
+<button class="menu-btn" id="menuBtn" aria-label="Open menu">
+    <i class="fa-solid fa-bars"></i>
+</button>
+            <img src="Images/istockphoto-1020211716-1024x1024.jpg" alt="School Logo">
+
+            <div>
+                <h2>BUKANDA STUDENTS INFORMATION PORTAL</h2>
+                <p>Student Iformations portal</p>
+            </div>
+
+        </div>
+
+        <!-- Header right section -->
+        <div class="header-actions">
+
+            <!-- Notifications -->
+            <button class="notification-btn" id="notificationBtn"
+                aria-label="Notifications">
+
+                <i class="fa-solid fa-bell"></i>
+
+            </button>
+
+            <!-- Student profile button -->
+            <button class="profile-btn" id="profileBtn"
+                aria-label="Student profile">
+
+                <i class="fa-solid fa-circle-user"></i>
+
+            </button>
+
+            <!-- Profile dropdown -->
+            <div class="profile-dropdown" id="profileDropdown">
+
+                <!-- Student profile option -->
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <!-- Settings expandable option -->
+                <div class="settings-menu">
+
+                    <button id="settingsBtn" class="settings-btn">
+                        <span>
+                            <i class="fa-solid fa-gear"></i>
+                            Settings
+                        </span>
+
+                        <i class="fa-solid fa-chevron-down"
+                           id="settingsChevron"></i>
+                    </button>
+
+                    <!-- Expanded settings content -->
+                    <div class="settings-content" id="settingsContent">
+
+                        <a href="#">
+                            Account Settings
+                        </a>
+
+                        <a href="#">
+                            Change Password
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Logout option -->
+                <a href="login.html" class="logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+  <!-- Dashboard slide menu -->
+<aside class="dashboard-slide-menu" id="slideMenu">
+
+    <div class="slide-menu-heading">
+        <h3>BUSIP MENU</h3>
+    </div>
+
+    <nav class="slide-menu-links">
+
+        <a href="dashboard.html">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="results.html">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Academic Results</span>
+        </a>
+
+        <a href="timetable.html">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Timetable</span>
+        </a>
+
+        <a href="attendance.html">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>Attendance</span>
+        </a>
+
+        <a href="assignments.html">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Assignments</span>
+        </a>
+
+        <a href="announcements.html">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>Announcements</span>
+        </a>
+
+    </nav>
+
+</aside>
+
+<!-- Background overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <main class="dashboard-main">
+
+        <!-- STUDENT WELCOME SECTION -->
+        <section class="student-welcome">
+
+            <div class="welcome-details">
+
+                <p class="welcome-label">STUDENT DASHBOARD</p>
+
+                <h2 id="studentName">Welcome Back, Student</h2>
+<p id="studentRegNumber">Registration Number</p>
+
+                <p>
+                    Welcome to your student information portal.
+                    Access your academic information and school updates here.
+                </p>
+
+            </div>
+
+            <!-- Student academic information -->
+            <div class="student-academic-info">
+
+                <div class="academic-item">
+                    <span>Education Level</span>
+                    <h3>O-Level</h3>
+                </div>
+
+                <div class="academic-item">
+                    <span>Class / Form</span>
+                    <h3>Form Four</h3>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STUDENT PROFILE PREVIEW -->
+        <section class="student-profile-preview">
+
+            <div class="section-heading">
+                <h2>Student Profile</h2>
+                <a href="profile.html">View Profile</a>
+            </div>
+
+            <div class="profile-preview-content">
+
+                <div class="student-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="student-basic-info">
+
+                    <h3>Student Name</h3>
+                    <p>O-Level Student</p>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </div>
+
+        </section>
+
+
+        <!-- STUDENT QUICK ACCESS -->
+        <section class="dashboard-services">
+
+            <div class="section-heading">
+                <h2>My Academics</h2>
+                <p>Access your school information</p>
+            </div>
+
+            <div class="services-grid">
+
+                <!-- Academic results -->
+                <a href="results.html" class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <h3>Academic Results</h3>
+                    <p>View your examination results.</p>
+
+                </a>
+
+                <!-- Timetable -->
+                <a href="timetable.html" class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <h3>Timetable</h3>
+                    <p>View your class timetable.</p>
+
+                </a>
+
+                <!-- Attendance -->
+                <a href="attendance.html" class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-clipboard-check"></i>
+                    </div>
+
+                    <h3>Attendance</h3>
+                    <p>Check your attendance records.</p>
+
+                </a>
+
+                <!-- Assignments -->
+                <a href="assignments.html" class="service-card">
+
+                    <div class="service-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <h3>Assignments</h3>
+                    <p>View your assignments.</p>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCHOOL ANNOUNCEMENTS -->
+        <section class="dashboard-announcements">
+
+            <div class="section-heading">
+                <h2>Announcements</h2>
+                <a href="announcements.html">View All</a>
+            </div>
+
+            <div class="announcement-content">
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+                <div>
+                    <h3>School Announcements</h3>
+                    <p>
+                        Important school updates and announcements
+                        will appear here.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+  
+<!-- DASHBOARD FOOTER -->
+<footer class="dashboard-footer">
+
+    <div class="footer-content">
+
+        <!-- School information -->
+        <div class="footer-brand">
+            <h3>BUKANDA SEKONDARI SCHOOLS</h3>
+            <p>BUSIP - Bukanda Students Information Portal</p>
+        </div>
+
+        <!-- Footer links -->
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Help & Support</a>
+        </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 Bukanda Sekondari Schools. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+
+
+    <!-- Dashboard JavaScript -->
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,899 @@
+
+/* =========================================
+   1. GENERAL SETTINGS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6f8;
+    color: #263445;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   2. FIXED DASHBOARD HEADER
+========================================= */
+
+.dashboard-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 75px;
+    padding: 10px 5% ;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Header branding */
+
+.dashboard-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.dashboard-brand img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.dashboard-brand h2 {
+    font-size: 15px;
+    color: #173B60;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.dashboard-brand p {
+    font-size: 11px;
+    color: #555f6b;
+    margin-top: 3px;
+}
+
+/* Header action buttons */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.menu-btn,
+.notification-btn,
+.profile-btn {
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 7px;
+    background: #DCE5EF;
+    color: #173B60;
+    font-size: 17px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-btn:hover,
+.notification-btn:hover,
+.profile-btn:hover {
+    background: #294D70;
+    color: #ffffff;
+}
+
+.menu-btn {
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   3. DASHBOARD SLIDE MENU
+========================================= */
+
+.dashboard-slide-menu {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 270px;
+    max-width: 55%;
+    height: calc(100vh - 75px);
+    padding: 90px 18px 25px;
+    background: #173B60;
+    z-index: 1200;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.dashboard-slide-menu.active {
+    transform: translateX(0);
+}
+
+.slide-menu-heading {
+    padding: 0 10px 20px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.slide-menu-heading h3 {
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+.slide-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.slide-menu-links a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 11px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 13px;
+    transition: background 0.2s ease;
+}
+
+.slide-menu-links a i {
+    width: 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.slide-menu-links a:hover {
+    background: #294D70;
+}
+
+/* Background overlay */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1100;
+    display: none;
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+
+/* =========================================
+   4. PROFILE DROPDOWN
+========================================= */
+
+.profile-dropdown {
+    position: fixed;
+    top: 75px;
+    right: 0;
+    height: calc(100vh - 75px);
+    width: 250px;
+    background: #ffffff;
+    border: 1px solid #dce1e7;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    display: none;
+    z-index: 1000;
+}
+
+.profile-dropdown.active {
+    display: block;
+}
+
+/* Dropdown links */
+
+.profile-dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 10px;
+    color: #294D70;
+    font-size: 13px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+.profile-dropdown > a:hover {
+    background: #DCE5EF;
+}
+
+.profile-dropdown > a i {
+    width: 17px;
+    text-align: center;
+}
+
+/* Settings button */
+
+.settings-menu {
+    width: 100%;
+}
+
+.settings-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+    background: transparent;
+    border: none;
+    color: #294D70;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: left;
+}
+
+.settings-btn span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.settings-btn span i {
+    width: 17px;
+    text-align: center;
+}
+
+.settings-chevron,
+#settingsChevron {
+    transition: transform 0.3s ease;
+}
+
+.settings-btn.active #settingsChevron {
+    transform: rotate(180deg);
+}
+
+/* Expanded settings content */
+
+.settings-content {
+    display: none;
+    padding: 3px 0 5px 38px;
+}
+
+.settings-content.active {
+    display: block;
+}
+
+.settings-content a {
+    display: block;
+    padding: 9px 8px;
+    color: #555f6b;
+    font-size: 12px;
+}
+
+.settings-content a:hover {
+    color: #173B60;
+    background: #DCE5EF;
+    border-radius: 5px;
+}
+
+/* Logout */
+
+.profile-dropdown .logout-link {
+    color: #B54736;
+    margin-top: 5px;
+}
+
+
+/* =========================================
+   5. MAIN DASHBOARD CONTENT
+========================================= */
+
+.dashboard-main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 95px 25px 35px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-size: 17px;
+    color: #173B60;
+}
+
+.section-heading > a {
+    color: #294D70;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.section-heading > a:hover {
+    color: #B54736;
+}
+
+
+/* =========================================
+   6. STUDENT WELCOME SECTION
+========================================= */
+
+.student-welcome {
+    background: #173B60;
+    color: #ffffff;
+    padding: 28px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.welcome-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.welcome-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #DCE5EF;
+    margin-bottom: 10px;
+}
+
+.welcome-details h2 {
+    font-size: 23px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.welcome-details #studentRegNumber {
+    color: #DCE5EF;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.welcome-details > p:last-child {
+    color: #e5eaf0;
+    font-size: 13px;
+    max-width: 530px;
+}
+
+/* Student academic information */
+
+.student-academic-info {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.academic-item {
+    background: #294D70;
+    min-width: 125px;
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.academic-item span {
+    display: block;
+    font-size: 11px;
+    color: #DCE5EF;
+    margin-bottom: 5px;
+}
+
+.academic-item h3 {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   7. STUDENT PROFILE PREVIEW
+========================================= */
+
+.student-profile-preview {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 9px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.profile-preview-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 5px;
+    cursor: pointer;
+}
+
+.student-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #DCE5EF;
+    color: #173B60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.student-basic-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.student-basic-info h3 {
+    color: #173B60;
+    font-size: 14px;
+}
+
+.student-basic-info p {
+    color: #596575;
+    font-size: 12px;
+}
+
+.profile-preview-content > i {
+    color: #294D70;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   8. STUDENT ACADEMIC SERVICES
+========================================= */
+
+.dashboard-services {
+    margin-bottom: 30px;
+}
+
+.dashboard-services .section-heading {
+    display: block;
+}
+
+.dashboard-services .section-heading p {
+    font-size: 12px;
+    color: #596575;
+    margin-top: 3px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 22px 18px;
+    border-radius: 9px;
+    color: #263445;
+    min-width: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.09);
+}
+
+.service-icon {
+    width: 43px;
+    height: 43px;
+    background: #DCE5EF;
+    color: #173B60;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    margin-bottom: 16px;
+}
+
+.service-card h3 {
+    color: #173B60;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.service-card p {
+    color: #596575;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   9. ANNOUNCEMENTS
+========================================= */
+
+.dashboard-announcements {
+    margin-bottom: 20px;
+}
+
+.announcement-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 9px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.announcement-content > i {
+    width: 42px;
+    height: 42px;
+    background: #DCE5EF;
+    color: #173B60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.announcement-content h3 {
+    font-size: 14px;
+    color: #173B60;
+    margin-bottom: 5px;
+}
+
+.announcement-content p {
+    font-size: 12px;
+    color: #596575;
+}
+
+
+/* =========================================
+   10. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .student-welcome {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .student-academic-info {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   11. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+
+    .dashboard-header {
+        min-height: 65px;
+        padding: 9px 12px;
+        gap: 8px;
+    }
+
+    .dashboard-brand {
+        gap: 7px;
+        flex: 1;
+    }
+
+    .dashboard-brand img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .dashboard-brand h2 {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    .dashboard-brand p {
+        font-size: 9px;
+    }
+
+    .header-actions {
+        gap: 7px;
+    }
+
+    .menu-btn,
+    .notification-btn,
+    .profile-btn {
+        width: 33px;
+        height: 33px;
+        font-size: 14px;
+    }
+
+    .dashboard-main {
+        padding: 85px 13px 25px;
+    }
+
+    .student-welcome {
+        padding: 20px 17px;
+        gap: 20px;
+        border-radius: 8px;
+        margin-bottom: 23px;
+    }
+
+    .welcome-details h2 {
+        font-size: 19px;
+    }
+
+    .welcome-details > p:last-child {
+        font-size: 12px;
+    }
+
+    .academic-item {
+        flex: 1;
+        min-width: 0;
+        padding: 12px;
+    }
+
+    .academic-item span {
+        font-size: 10px;
+    }
+
+    .academic-item h3 {
+        font-size: 13px;
+    }
+
+    .student-profile-preview {
+        padding: 17px;
+        margin-bottom: 23px;
+    }
+
+    .services-grid {
+        gap: 12px;
+    }
+
+    .service-card {
+        padding: 17px 13px;
+    }
+
+    .service-card h3 {
+        font-size: 13px;
+    }
+
+    .service-card p {
+        font-size: 11px;
+    }
+
+    .announcement-content {
+        padding: 16px;
+    }
+
+    .profile-dropdown {
+        width: 210px;
+        right: 0;
+    }
+
+}
+
+
+/* =========================================
+   12. SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .dashboard-header {
+        padding: 8px;
+    }
+
+    .dashboard-brand img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .dashboard-brand h2 {
+        font-size: 9px;
+    }
+
+    .header-actions {
+        gap: 5px;
+    }
+
+    .menu-btn,
+    .notification-btn,
+    .profile-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
+
+    .dashboard-main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .services-grid {
+        gap: 9px;
+    }
+
+    .service-card {
+        padding: 14px 10px;
+    }
+
+}
+
+
+
+/* =========================================
+   13. DASHBOARD FOOTER
+========================================= */
+
+.dashboard-footer {
+    width: 100%;
+    background: #173B60;
+    color: #ffffff;
+    padding: 25px 25px 15px;
+    margin-top: 30px;
+}
+
+.footer-content {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-brand h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.footer-brand p {
+    font-size: 12px;
+    color: #DCE5EF;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: #DCE5EF;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    max-width: 1150px;
+    margin: 20px auto 0;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #DCE5EF;
+    font-size: 11px;
+}
+
+/* Footer on mobile */
+
+@media (max-width: 600px) {
+
+    .dashboard-footer {
+        padding: 22px 15px 14px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+
+    .footer-bottom p {
+        font-size: 10px;
+    }
+
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+
+    .dashboard-main {
+        padding: 80px 12px 20px;
+        width: 100%;
+    }
+
+    .dashboard-header {
+        padding: 0 20px;
+    }
+
+    .dashboard-brand h2 {
+        font-size: 14px;
+    }
+
+    .dashboard-brand img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .student-welcome {
+        padding: 18px 14px;
+    }
+
+    .student-welcome h1 {
+        font-size: 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .service-card {
+        min-width: 0;
+        padding: 12px;
+    }
+
+    .dashboard-footer {
+        padding: 20px 12px;
+    }
+}
+
+/* Prevent horizontal scrolling */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

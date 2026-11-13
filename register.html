@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>BUSIP | Create Account</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="register.css">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Main registration container -->
+    <main class="register-container">
+
+        <!-- Registration card -->
+        <section class="register-card">
+
+            <!-- School logo -->
+            <div class="register-logo">
+                <img src="Images/istockphoto-1020211716-1024x1024.jpg" alt="Bukanda School Logo">
+            </div>
+
+            <!-- Portal branding -->
+            <div class="register-heading">
+                <h1>BUSIP</h1>
+                <p>Bukanda Students Information Portal</p>
+            </div>
+
+            <!-- Welcome message -->
+            <div class="register-welcome">
+                <h2>Create Your Account</h2>
+                <p>Enter your school registration details to get started.</p>
+            </div>
+
+            <!-- Registration form -->
+            <form id="registerForm">
+
+                <!-- Registration Number -->
+                <div class="form-group">
+                    <label for="regNumber">Registration Number</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-id-card"></i>
+
+                        <input
+                            type="text"
+                            id="regNumber"
+                            placeholder="Enter registration number"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="form-group">
+                    <label for="dateOfBirth">Date of Birth</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-calendar"></i>
+
+                        <input
+                            type="date"
+                            id="dateOfBirth"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <!-- Create Password -->
+                <div class="form-group">
+                    <label for="newPassword">Create Password</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="Create your password"
+                            required
+                        >
+
+                        <i class="fa-solid fa-eye toggle-password"
+                           id="showNewPassword"></i>
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm your password"
+                            required
+                        >
+
+                        <i class="fa-solid fa-eye toggle-password"
+                           id="showConfirmPassword"></i>
+                    </div>
+                </div>
+
+                <!-- Registration validation message -->
+                <p id="registerMessage" class="register-message"></p>
+
+                <!-- Create account button -->
+                <button type="submit" class="register-btn">
+                    CREATE ACCOUNT
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+            <!-- Existing account login -->
+            <div class="existing-account">
+                <p>Already have an account?</p>
+                <a href="login.html">Login</a>
+            </div>
+
+            <!-- Page footer -->
+            <div class="register-footer">
+                <p>© 2026 Bukanda Sekondari Schools</p>
+
+                <a href="index.html">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Website
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+<script src="register.js"></script>
+</body>
+</html>
